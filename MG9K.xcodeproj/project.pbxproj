@@ -16,8 +16,9 @@
 		955E2A29253608FC00C8D05C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A27253608FC00C8D05C /* LaunchScreen.storyboard */; };
 		955E2A34253608FD00C8D05C /* MG9KTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E2A33253608FD00C8D05C /* MG9KTests.swift */; };
 		955E2A3F253608FD00C8D05C /* MG9KUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E2A3E253608FD00C8D05C /* MG9KUITests.swift */; };
-		955E2A792536150000C8D05C /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A77253614FF00C8D05C /* awsconfiguration.json */; };
 		955E2A7A2536150000C8D05C /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A78253614FF00C8D05C /* amplifyconfiguration.json */; };
+		955E2A95253CD95D00C8D05C /* awsconfiguration(AppSynch).json in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A94253CD95D00C8D05C /* awsconfiguration(AppSynch).json */; };
+		955E2A9A253CDA8500C8D05C /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A99253CDA8400C8D05C /* awsconfiguration.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +55,9 @@
 		955E2A3A253608FD00C8D05C /* MG9KUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MG9KUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		955E2A3E253608FD00C8D05C /* MG9KUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MG9KUITests.swift; sourceTree = "<group>"; };
 		955E2A40253608FD00C8D05C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		955E2A77253614FF00C8D05C /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		955E2A78253614FF00C8D05C /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
+		955E2A94253CD95D00C8D05C /* awsconfiguration(AppSynch).json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "awsconfiguration(AppSynch).json"; sourceTree = SOURCE_ROOT; };
+		955E2A99253CDA8400C8D05C /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		A26F9ED7327284AB7242B481 /* Pods_MG9K.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MG9K.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,7 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				955E2A78253614FF00C8D05C /* amplifyconfiguration.json */,
-				955E2A77253614FF00C8D05C /* awsconfiguration.json */,
+				955E2A99253CDA8400C8D05C /* awsconfiguration.json */,
+				955E2A94253CD95D00C8D05C /* awsconfiguration(AppSynch).json */,
 				955E2A1C253608F700C8D05C /* AppDelegate.swift */,
 				955E2A1E253608F700C8D05C /* SceneDelegate.swift */,
 				955E2A20253608F700C8D05C /* ViewController.swift */,
@@ -263,8 +266,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				955E2A792536150000C8D05C /* awsconfiguration.json in Resources */,
 				955E2A29253608FC00C8D05C /* LaunchScreen.storyboard in Resources */,
+				955E2A95253CD95D00C8D05C /* awsconfiguration(AppSynch).json in Resources */,
+				955E2A9A253CDA8500C8D05C /* awsconfiguration.json in Resources */,
 				955E2A7A2536150000C8D05C /* amplifyconfiguration.json in Resources */,
 				955E2A26253608FC00C8D05C /* Assets.xcassets in Resources */,
 				955E2A24253608F700C8D05C /* Main.storyboard in Resources */,
@@ -520,10 +524,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = SDP.MG9K;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -540,10 +545,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = SDP.MG9K;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

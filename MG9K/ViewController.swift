@@ -3,7 +3,7 @@
 //  MG9K
 //
 //  Created by Jackie Chan on 10/6/20.
-//
+//  updated 10/20/20; version 1.02
 
 import UIKit
 import AWSAuthUI
@@ -15,11 +15,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
         initializeAWSMobileClient()
         showSignIn()
     }
     
+    // AWS Sign in 
     func showSignIn(){
         if !AWSSignInManager.sharedInstance().isLoggedIn {
             AWSAuthUIViewController

@@ -3,7 +3,7 @@
 //  MG9K
 //
 //  Created by Jackie Chan on 10/13/20.
-//
+//  updated 10/20/20; version 1.02
 
 import UIKit
 

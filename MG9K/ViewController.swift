@@ -3,7 +3,8 @@
 //  MG9K
 //
 //  Created by Jackie Chan on 10/6/20.
-//  updated 10/20/20; version 1.02
+//  updated 10/20/20
+//  updated 10/21/20
 
 import UIKit
 import AWSAuthUI
@@ -72,6 +73,12 @@ class ViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    @IBOutlet weak var textLabel:UILabel?
+    
+    @ IBAction func onButtonTap(){
+        
     }
     /*
     func signOutLocally() {

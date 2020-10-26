@@ -19,8 +19,6 @@
 		955E2A7A2536150000C8D05C /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A78253614FF00C8D05C /* amplifyconfiguration.json */; };
 		955E2A95253CD95D00C8D05C /* awsconfiguration(AppSynch).json in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A94253CD95D00C8D05C /* awsconfiguration(AppSynch).json */; };
 		955E2A9A253CDA8500C8D05C /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 955E2A99253CDA8400C8D05C /* awsconfiguration.json */; };
-		95F1E3322540F072007937CE /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E3312540F072007937CE /* Notifications.storyboard */; };
-		95F1E3372540F4AD007937CE /* BarcodeInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E3362540F4AD007937CE /* BarcodeInput.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +58,6 @@
 		955E2A78253614FF00C8D05C /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
 		955E2A94253CD95D00C8D05C /* awsconfiguration(AppSynch).json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "awsconfiguration(AppSynch).json"; sourceTree = SOURCE_ROOT; };
 		955E2A99253CDA8400C8D05C /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
-		95F1E3312540F072007937CE /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
-		95F1E3362540F4AD007937CE /* BarcodeInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BarcodeInput.storyboard; sourceTree = "<group>"; };
 		A26F9ED7327284AB7242B481 /* Pods_MG9K.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MG9K.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,8 +137,6 @@
 				955E2A20253608F700C8D05C /* ViewController.swift */,
 				955E2A27253608FC00C8D05C /* LaunchScreen.storyboard */,
 				955E2A22253608F700C8D05C /* Main.storyboard */,
-				95F1E3312540F072007937CE /* Notifications.storyboard */,
-				95F1E3362540F4AD007937CE /* BarcodeInput.storyboard */,
 				955E2A25253608FC00C8D05C /* Assets.xcassets */,
 				955E2A2A253608FC00C8D05C /* Info.plist */,
 			);
@@ -276,9 +270,7 @@
 				955E2A95253CD95D00C8D05C /* awsconfiguration(AppSynch).json in Resources */,
 				955E2A9A253CDA8500C8D05C /* awsconfiguration.json in Resources */,
 				955E2A7A2536150000C8D05C /* amplifyconfiguration.json in Resources */,
-				95F1E3322540F072007937CE /* Notifications.storyboard in Resources */,
 				955E2A26253608FC00C8D05C /* Assets.xcassets in Resources */,
-				95F1E3372540F4AD007937CE /* BarcodeInput.storyboard in Resources */,
 				955E2A24253608F700C8D05C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

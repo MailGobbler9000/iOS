@@ -12,8 +12,20 @@ import AWSAuthCore
 import AWSMobileClient
 //import Amplify
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    // MARK: Properties
+    
+   // @IBOutlet weak var barcodeLabel: UILabel!
+   // @IBOutlet weak var barcodeFieldName: UITextField!
+    
+    //test
+    @IBOutlet weak var barcodeInput: UITextField!
+    @IBOutlet weak var barcodeOutput: UILabel!
+    
+    // initialize barcode input
+    var barcode : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -49,13 +61,14 @@ class ViewController: UIViewController {
                 case.signedIn: // is Signed IN
                     print("Logged In")
                     print("Cognito Identity ID (authenticated): \(AWSMobileClient.default().identityId))")
-
+                
                 case.signedOut: // is Signed OUT
                     print("Logged Out")
                     DispatchQueue.main.async {
                        // self.signOutLocally()
                         self.showSignIn()
                 }
+                /*
                 case.signedOutUserPoolsTokenInvalid: // UserPools refresh token Invalid
                     print("User Pools refresh token is invalid or expired.")
                     DispatchQueue.main.async {
@@ -65,7 +78,7 @@ class ViewController: UIViewController {
                     print("Federated refresh token is invalid or expired.")
                     DispatchQueue.main.async {
                         self.showSignIn()
-                    }
+                    }*/
                 default:
                     AWSMobileClient.default().signOut()
                 }
@@ -75,28 +88,19 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var textLabel:UILabel?
+    //MARK: UITextFieldDelegate
+
+
+
+
+
+    //MARK: Actions
     
-    @ IBAction func onButtonTap(){
-        
+    @IBAction func addBarcode(_ sender: UIButton) {
+        barcode = barcodeInput.text!
+        barcodeOutput.text = "Last Inputted Barcode: \(barcode)"
     }
-    /*
-    func signOutLocally() {
-        Amplify.Auth.signOut(){ result in
-            switch result {
-            case.success:
-                print("Successfully signed out")
-            case.failure(let error):
-                print("Sign out failed with error \(error)")
-            }
-        }
-    }*/
-
-
-
-
-
-
+    
 }
     
 

@@ -10,16 +10,14 @@ import UIKit
 import AWSAuthUI
 import AWSAuthCore
 import AWSMobileClient
-//import Amplify
+
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Properties
     
-   // @IBOutlet weak var barcodeLabel: UILabel!
-   // @IBOutlet weak var barcodeFieldName: UITextField!
     
-    //test
+    // Intialization of Barcode input field and output field
     @IBOutlet weak var barcodeInput: UITextField!
     @IBOutlet weak var barcodeOutput: UILabel!
     
@@ -99,6 +97,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func addBarcode(_ sender: UIButton) {
         barcode = barcodeInput.text!
         barcodeOutput.text = "Last Inputted Barcode: \(barcode)"
+        print(barcode)
     }
     
 }

@@ -7,7 +7,7 @@ target 'MG9K' do
   pod 'AWSUserPoolsSignIn'
   pod 'AWSAuthUI'
   pod 'AWSMobileClient'
-  pod 'Amplify'
+  pod 'AWSAppSync'
   # Pods for MG9K
 
  # target 'MG9KTests' do

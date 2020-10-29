@@ -1,0 +1,46 @@
+# this is an auto generated file. This will be overwritten
+query GetAllLogs($count: Int, $nextToken: String) {
+  getAllLogs(count: $count, nextToken: $nextToken) {
+    Logs {
+      id
+      time
+    }
+    nextToken
+  }
+}
+query GetLog($id: ID) {
+  getLog(id: $id) {
+    id
+    time
+  }
+}
+query GetAllBarcodes($count: Int, $nextToken: String) {
+  getAllBarcodes(count: $count, nextToken: $nextToken) {
+    Barcodes {
+      barcode
+      value
+    }
+    nextToken
+  }
+}
+query GetBarcode($barcode: ID) {
+  getBarcode(barcode: $barcode) {
+    barcode
+    value
+  }
+}
+query GetAllPackages($count: Int, $nextToken: String) {
+  getAllPackages(count: $count, nextToken: $nextToken) {
+    Packages {
+      barcode
+      time
+    }
+    nextToken
+  }
+}
+query GetPackage($barcode: ID) {
+  getPackage(barcode: $barcode) {
+    barcode
+    time
+  }
+}

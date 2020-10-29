@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		72D40EA838C11CC2DCB8A500 /* Pods_MG9K.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26F9ED7327284AB7242B481 /* Pods_MG9K.framework */; };
+		9542D43B254B5966006207FC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9542D43A254B5965006207FC /* API.swift */; };
 		955E2A1D253608F700C8D05C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E2A1C253608F700C8D05C /* AppDelegate.swift */; };
 		955E2A1F253608F700C8D05C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E2A1E253608F700C8D05C /* SceneDelegate.swift */; };
 		955E2A21253608F700C8D05C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E2A20253608F700C8D05C /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		0CA1C626685D02AA6C0B75C8 /* Pods-MG9K.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MG9K.release.xcconfig"; path = "Target Support Files/Pods-MG9K/Pods-MG9K.release.xcconfig"; sourceTree = "<group>"; };
 		6A6A65F3913C73C6B0F9A22A /* Pods-MG9K.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MG9K.debug.xcconfig"; path = "Target Support Files/Pods-MG9K/Pods-MG9K.debug.xcconfig"; sourceTree = "<group>"; };
+		9542D43A254B5965006207FC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		955E2A19253608F700C8D05C /* MG9K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MG9K.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955E2A1C253608F700C8D05C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955E2A1E253608F700C8D05C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				955E2A78253614FF00C8D05C /* amplifyconfiguration.json */,
 				955E2A99253CDA8400C8D05C /* awsconfiguration.json */,
+				9542D43A254B5965006207FC /* API.swift */,
 				955E2A1C253608F700C8D05C /* AppDelegate.swift */,
 				955E2A1E253608F700C8D05C /* SceneDelegate.swift */,
 				955E2A20253608F700C8D05C /* ViewController.swift */,
@@ -336,6 +339,7 @@
 			files = (
 				955E2A21253608F700C8D05C /* ViewController.swift in Sources */,
 				955E2A1D253608F700C8D05C /* AppDelegate.swift in Sources */,
+				9542D43B254B5966006207FC /* API.swift in Sources */,
 				955E2A1F253608F700C8D05C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

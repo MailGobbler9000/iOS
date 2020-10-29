@@ -8,9 +8,12 @@
 
 import UIKit
 import AWSMobileClient
+import AWSAppSync
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var appSyncClient: AWSAppSyncClient?
     
     
     // initialize portait orientation lock
@@ -23,6 +26,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // AWS Authentication launching
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        do {
+            // You can choose the directory in which AppSync stores its persistent cache databases
+            let cacheConfiguration = try AWSAppSyncCacheConfiguration()
+
+            // AppSync configuration & client initialization
+            let appSyncServiceConfig = try AWSAppSyncServiceConfig()
+                let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig: appSyncServiceConfig,
+                                                                  cacheConfiguration: cacheConfiguration)
+                appSyncClient  = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
+                // Set id as the cache key for objects. See architecture section for details
+                appSyncClient?.apolloClient?.cacheKeyForObject = { $0["id"] }
+            } catch {
+                print("Error initializing appsync client. \(error)")
+            }
+            // other methods
         
         return AWSMobileClient.default().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
 

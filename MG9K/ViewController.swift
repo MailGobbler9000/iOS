@@ -10,12 +10,14 @@ import UIKit
 import AWSAuthUI
 import AWSAuthCore
 import AWSMobileClient
-
+import AWSAppSync
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Properties
     
+    var appSyncClient: AWSAppSyncClient?
+    //let unlock = Package(id: "lit", value: "lit")
     
     // Intialization of Barcode input field and output field
     @IBOutlet weak var barcodeInput: UITextField!
@@ -29,6 +31,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
         initializeAWSMobileClient()
         showSignIn()
+        
+        //Reference AppSync client from App Delegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appSyncClient = appDelegate.appSyncClient
+        
+        runQuery()
+        //runMutation()
     }
     
     // AWS Sign in 
@@ -100,6 +109,33 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print(barcode)
     }
     
+    // Grab all barcodes from into db
+    func runQuery(){
+        appSyncClient?.fetch(query: GetAllBarcodesQuery(count:100))  { (result, error) in
+            if error != nil {
+                print("Error......")
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            result?.data?.getAllBarcodes.barcodes.forEach {print(($0.barcode) + " " + ($0.value ?? "0")) }
+        }
+
+    }
+    /*
+    func runMutation(){
+
+        appSyncClient?.perform(mutation: UnlockRequestMutation(input: unlock())) { (result, error) in
+            if let error = error as? AWSAppSyncClientError {
+                print("Error occurred: \(error.localizedDescription )")
+            }
+            if let resultError = result?.errors {
+                print("Error saving the item on server: \(resultError)")
+                return
+            }
+        }
+
+    }
+    */
 }
     
 

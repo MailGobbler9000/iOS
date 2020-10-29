@@ -1,0 +1,43 @@
+# this is an auto generated file. This will be overwritten
+mutation AddLog($id: ID!, $time: String!) {
+  addLog(id: $id, time: $time) {
+    id
+    time
+  }
+}
+mutation AddBarcode($barcode: ID!, $value: String!) {
+  addBarcode(barcode: $barcode, value: $value) {
+    barcode
+    value
+  }
+}
+mutation AddPackage($barcode: ID!, $time: String!) {
+  addPackage(barcode: $barcode, time: $time) {
+    barcode
+    time
+  }
+}
+mutation UnlockRequest($id: ID!, $value: String!) {
+  unlockRequest(id: $id, value: $value) {
+    id
+    time
+  }
+}
+mutation DeleteLog($id: ID!, $expectedVersion: String) {
+  deleteLog(id: $id, expectedVersion: $expectedVersion) {
+    id
+    time
+  }
+}
+mutation DeleteBarcode($barcode: ID!, $expectedVersion: String) {
+  deleteBarcode(barcode: $barcode, expectedVersion: $expectedVersion) {
+    barcode
+    value
+  }
+}
+mutation DeletePackage($barcode: ID!, $expectedVersion: String) {
+  deletePackage(barcode: $barcode, expectedVersion: $expectedVersion) {
+    barcode
+    time
+  }
+}

@@ -1,0 +1,54 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type BarcodeLog {
+  barcode: ID!
+  value: String
+}
+
+type BarcodeLogger {
+  Barcodes: [BarcodeLog!]!
+  nextToken: String
+}
+
+type MailLog {
+  id: ID!
+  time: String
+}
+
+type MailLogger {
+  Logs: [MailLog!]!
+  nextToken: String
+}
+
+type Mutation {
+  addBarcode(barcode: ID!, value: String!): BarcodeLog!
+  addLog(id: ID!, time: String!): MailLog!
+  addPackage(barcode: ID!, time: String!): PackageLog!
+  deleteBarcode(barcode: ID!, expectedVersion: String): BarcodeLog!
+  deleteLog(expectedVersion: String, id: ID!): MailLog!
+  deletePackage(barcode: ID!, expectedVersion: String): PackageLog!
+  unlockRequest(id: ID!, value: String!): MailLog!
+}
+
+type PackageLog {
+  barcode: ID!
+  time: String
+}
+
+type PackageLogger {
+  Packages: [PackageLog!]!
+  nextToken: String
+}
+
+type Query {
+  getAllBarcodes(count: Int, nextToken: String): BarcodeLogger
+  getAllLogs(count: Int, nextToken: String): MailLogger!
+  getAllPackages(count: Int, nextToken: String): PackageLogger!
+  getBarcode(barcode: ID): BarcodeLog!
+  getLog(id: ID): MailLog!
+  getPackage(barcode: ID): PackageLog!
+  getNothing(id: ID): MailLog!
+}

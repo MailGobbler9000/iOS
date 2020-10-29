@@ -1,0 +1,5 @@
+{
+    "AppSyncApiName": "mg9k",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false
+}

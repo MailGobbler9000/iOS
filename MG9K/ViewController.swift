@@ -22,9 +22,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var barcodeInput: UITextField!
     @IBOutlet weak var barcodeOutput: UILabel!
     
-    // Barcode Log
+    // Barcode Output Log
     @IBOutlet weak var barcodeLogOutput: UILabel!
     
+    // Package Output Log
+    @IBOutlet weak var packageLogOutput: UILabel!
+    
+    // Letter-Mail Output Log
+    @IBOutlet weak var letterMailLogOutput: UILabel!
     
     // initialize barcode input
     var barcode : String = ""
@@ -106,6 +111,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         barcode = barcodeInput.text!
         barcodeOutput.text = "Last Inputted Barcode: \(barcode)"
         print(barcode)
+        
         appSyncClient?.perform(mutation: AddBarcodeMutation(barcode: "\(barcode)" ,value: "Not Delivered")) { (result, error) in
             if let error = error as? AWSAppSyncClientError {
                 print("Error occurred: \(error.localizedDescription )")
@@ -144,7 +150,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
        // barcodeLogOutput.text =
     }
+    // Grabs all packages from db
+    @IBAction func packageLog(_ sender: UIButton) {
+        appSyncClient?.fetch(query: GetAllPackagesQuery(count:100))  { (result, error) in
+                if error != nil {
+                    print("Error......")
+                    print(error?.localizedDescription ?? "")
+                    return
+                }
+            
+            result?.data?.getAllPackages.packages.forEach {print(($0.barcode) + " " + ($0.time ?? "0")) }
+            }
+    }
     
+    // Grabs all letter-mail from db
+    @IBAction func letterMailLog(_ sender: UIButton) {
+        appSyncClient?.fetch(query: GetAllLogsQuery(count:100))  { (result, error) in
+                if error != nil {
+                    print("Error......")
+                    print(error?.localizedDescription ?? "")
+                    return
+                }
+            
+            result?.data?.getAllLogs.logs.forEach {print(($0.id) + " " + ($0.time ?? "0")) }
+            }
+    }
     
     
     /*

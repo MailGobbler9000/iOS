@@ -276,6 +276,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
+                                    <action selector="letterMailLog:" destination="qLc-Dq-8v7" eventType="touchUpInside" id="TxB-pD-2Df"/>
                                     <segue destination="KSd-Qn-Evk" kind="popoverPresentation" popoverAnchorView="IY7-5c-9rj" id="hSJ-lJ-i41">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
@@ -296,6 +297,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
+                                    <action selector="packageLog:" destination="qLc-Dq-8v7" eventType="touchUpInside" id="5fq-PJ-e4b"/>
                                     <segue destination="KQ7-ZP-6a8" kind="popoverPresentation" popoverAnchorView="CSy-eJ-cnE" id="EK7-1q-8XT">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
@@ -338,23 +340,6 @@
                                 <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T9l-7D-r35">
-                                <rect key="frame" x="23" y="128" width="42" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Show">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="17"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="barcodeLog:" destination="9je-Ul-S0e" eventType="touchUpInside" id="lIB-Ln-8Zr"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iu9-fi-yXZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -364,7 +349,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1V-bu-4Ef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="9je-Ul-S0e" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="1445.7589285714284"/>
         </scene>
@@ -389,14 +373,23 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27l-w1-rE2">
+                                <rect key="frame" x="20" y="321" width="374" height="463"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bjz-il-xAw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="letterMailLogOutput" destination="27l-w1-rE2" id="xMa-a2-qLr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4O-be-NGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833" y="1446"/>
+            <point key="canvasLocation" x="1831.8840579710147" y="1445.7589285714284"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uh3-wR-r8z">
@@ -419,14 +412,24 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMy-pg-9NT">
+                                <rect key="frame" x="20" y="269" width="374" height="539"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9us-1b-1ID"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="packageLogOutput" destination="TMy-pg-9NT" id="mjQ-kc-3kj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yso-bA-TiX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2647" y="1436"/>
+            <point key="canvasLocation" x="2646.376811594203" y="1435.7142857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AcY-k6-leu">

@@ -22,21 +22,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var barcodeInput: UITextField!
     @IBOutlet weak var barcodeOutput: UILabel!
     
+    // Barcode Log
+    @IBOutlet weak var barcodeLogOutput: UILabel!
+    
+    
     // initialize barcode input
     var barcode : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        // AWS Cognito
         initializeAWSMobileClient()
         showSignIn()
         
         //Reference AppSync client from App Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appSyncClient = appDelegate.appSyncClient
-        
-        runQuery()
-        runMutation()
     }
     
     // AWS Sign in 
@@ -74,6 +76,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                        // self.signOutLocally()
                         self.showSignIn()
                 }
+                    
+                // Not used: For 3rd Party Sign-In
                 /*
                 case.signedOutUserPoolsTokenInvalid: // UserPools refresh token Invalid
                     print("User Pools refresh token is invalid or expired.")
@@ -93,34 +97,57 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
-    //MARK: UITextFieldDelegate
-
-
-
 
 
     //MARK: Actions
     
+    // Adds the barcode into db
     @IBAction func addBarcode(_ sender: UIButton) {
         barcode = barcodeInput.text!
         barcodeOutput.text = "Last Inputted Barcode: \(barcode)"
         print(barcode)
-    }
-    
-    // Grab all barcodes from into db
-    func runQuery(){
-        appSyncClient?.fetch(query: GetAllBarcodesQuery(count:100))  { (result, error) in
-            if error != nil {
-                print("Error......")
-                print(error?.localizedDescription ?? "")
+        appSyncClient?.perform(mutation: AddBarcodeMutation(barcode: "\(barcode)" ,value: "Not Delivered")) { (result, error) in
+            if let error = error as? AWSAppSyncClientError {
+                print("Error occurred: \(error.localizedDescription )")
+            }
+            if let resultError = result?.errors {
+                print("Error saving the item on server: \(resultError)")
                 return
             }
-            result?.data?.getAllBarcodes.barcodes.forEach {print(($0.barcode) + " " + ($0.value ?? "0")) }
         }
-
     }
     
+    
+    // Sends a request to unlock
+    @IBAction func UnlockRequest(_ sender: UIButton) {
+        appSyncClient?.perform(mutation: UnlockRequestMutation(id: "1" ,value: "1")) { (result, error) in
+            if let error = error as? AWSAppSyncClientError {
+                print("Error occurred: \(error.localizedDescription )")
+            }
+            if let resultError = result?.errors {
+                print("Error saving the item on server: \(resultError)")
+                return
+            }
+        }
+    }
+   
+    // Grab all barcodes from into db
+    @IBAction func barcodeLog(_ sender: UIButton) {
+        appSyncClient?.fetch(query: GetAllBarcodesQuery(count:100))  { (result, error) in
+                if error != nil {
+                    print("Error......")
+                    print(error?.localizedDescription ?? "")
+                    return
+                }
+            
+                result?.data?.getAllBarcodes.barcodes.forEach {print(($0.barcode) + " " + ($0.value ?? "0")) }
+            }
+       // barcodeLogOutput.text =
+    }
+    
+    
+    
+    /*
     func runMutation(){
 
         appSyncClient?.perform(mutation: UnlockRequestMutation(id: "1" ,value: "1")) { (result, error) in
@@ -133,7 +160,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
 
-    }
+    }*/
+    
+    /*
+    func runQuery(){
+        appSyncClient?.fetch(query: GetAllBarcodesQuery(count:100))  { (result, error) in
+            if error != nil {
+                print("Error......")
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            result?.data?.getAllBarcodes.barcodes.forEach {print(($0.barcode) + " " + ($0.value ?? "0")) }
+        }
+
+    }*/
     
 }
     

@@ -17,7 +17,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: Properties
     
     var appSyncClient: AWSAppSyncClient?
-    //let unlock = Package(id: "lit", value: "lit")
     
     // Intialization of Barcode input field and output field
     @IBOutlet weak var barcodeInput: UITextField!
@@ -37,7 +36,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         appSyncClient = appDelegate.appSyncClient
         
         runQuery()
-        //runMutation()
+        runMutation()
     }
     
     // AWS Sign in 
@@ -121,10 +120,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
-    /*
+    
     func runMutation(){
 
-        appSyncClient?.perform(mutation: UnlockRequestMutation(input: unlock())) { (result, error) in
+        appSyncClient?.perform(mutation: UnlockRequestMutation(id: "1" ,value: "1")) { (result, error) in
             if let error = error as? AWSAppSyncClientError {
                 print("Error occurred: \(error.localizedDescription )")
             }
@@ -135,7 +134,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
-    */
+    
 }
     
 

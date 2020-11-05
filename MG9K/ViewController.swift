@@ -3,8 +3,8 @@
 //  MG9K
 //
 //  Created by Jackie Chan on 10/6/20.
-//  updated 10/20/20
-//  updated 10/21/20
+//  
+//
 
 import UIKit
 import AWSAuthUI
@@ -18,13 +18,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var appSyncClient: AWSAppSyncClient?
     
+    struct bLog: Codable {
+        var barcode: String
+        var status: String
+    }
+    struct pLog: Codable {
+        var barcode: String?
+        var time: String?
+    }
+    
+    
     // Intialization of Barcode input field and output field
     @IBOutlet weak var barcodeInput: UITextField!
     @IBOutlet weak var barcodeOutput: UILabel!
     
     // Barcode Output Log
-    @IBOutlet weak var barcodeLogOutput: UILabel!
+    @IBOutlet var barcodeLogOutput: [UILabel]!
     
+
     // Package Output Log
     @IBOutlet weak var packageLogOutput: UILabel!
     
@@ -124,6 +135,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func showBarcodeLog(_ sender: UIButton) {
+        var barcodeArr = [bLog]()
+        
+        appSyncClient?.fetch(query: GetAllBarcodesQuery(count:1000000000))  { (result, error) in
+                if error != nil {
+                    print("Error......")
+                    print(error?.localizedDescription ?? "")
+                    return
+                }
+            
+            result?.data?.getAllBarcodes.barcodes.forEach {barcodeArr.append(bLog(barcode: $0.barcode, status: $0.value ?? "Not Delivered"))
+                }
+            for i in barcodeArr{
+                if(i != nil){
+                    for j in self.barcodeLogOutput{
+                        let tempBarcode = i.barcode
+                        let tempStatus = i.status
+                        print("\(tempBarcode)  \(tempStatus) ")
+                        j.text = tempBarcode + " " + tempStatus
+                    }
+                }
+                else{
+                    print("Error: \(String(describing: error?.localizedDescription))")
+                }
+            }
+            }
+    }
+
+    
+    
     // Sends a request to unlock
     @IBAction func UnlockRequest(_ sender: UIButton) {
         appSyncClient?.perform(mutation: UnlockRequestMutation(id: "1" ,value: "1")) { (result, error) in
@@ -136,9 +177,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-   
+    /*
     // Grab all barcodes from into db
     @IBAction func barcodeLog(_ sender: UIButton) {
+        
+        var barcodeArr = [bLog]()
+        
         appSyncClient?.fetch(query: GetAllBarcodesQuery(count:100))  { (result, error) in
                 if error != nil {
                     print("Error......")
@@ -146,12 +190,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     return
                 }
             
-                result?.data?.getAllBarcodes.barcodes.forEach {print(($0.barcode) + " " + ($0.value ?? "0")) }
+            result?.data?.getAllBarcodes.barcodes.forEach {barcodeArr.append(bLog(barcode: $0.barcode, status: $0.value ?? "Not Delivered"))
+                }
+            for i in barcodeArr{
+                if(i != nil){
+                    let tempBarcode = i.barcode
+                    let tempStatus = i.status
+                    print("\(tempBarcode)  \(tempStatus) ")
+                }
+                else{
+                    print("Error: \(String(describing: error?.localizedDescription))")
+                }
             }
-       // barcodeLogOutput.text =
-    }
+
+            }
+    }*/
+    
+    /*
     // Grabs all packages from db
     @IBAction func packageLog(_ sender: UIButton) {
+        
+        var packageArr = [pLog]()
         appSyncClient?.fetch(query: GetAllPackagesQuery(count:100))  { (result, error) in
                 if error != nil {
                     print("Error......")
@@ -159,13 +218,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     return
                 }
             
-            result?.data?.getAllPackages.packages.forEach {print(($0.barcode) + " " + ($0.time ?? "0")) }
-            }
-    }
+            result?.data?.getAllPackages.packages.forEach {packageArr.append(pLog(barcode: ($0.barcode), time: ($0.time ?? "0"))) }
+            for i in packageArr{
+                guard let tempBarcode = i.barcode, let tempTime = i.time else {
+                    return
+                }
+                    //print(String(describing: tempBarcode) + " " + String(describing: tempTime))
+                    self.packageLogOutput.text = (tempBarcode as? String)
+                    self.packageLogOutput.text = (tempTime as? String)
+                }
+                    
+                }
+            }*/
     
-    // Grabs all letter-mail from db
+    
+    // Grabs all letter-mail from db/*
     @IBAction func letterMailLog(_ sender: UIButton) {
-        appSyncClient?.fetch(query: GetAllLogsQuery(count:100))  { (result, error) in
+        appSyncClient?.fetch(query: GetAllLogsQuery(count:100000))  { (result, error) in
                 if error != nil {
                     print("Error......")
                     print(error?.localizedDescription ?? "")
@@ -175,6 +244,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             result?.data?.getAllLogs.logs.forEach {print(($0.id) + " " + ($0.time ?? "0")) }
             }
     }
+  
     
     
     /*

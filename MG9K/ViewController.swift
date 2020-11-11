@@ -33,14 +33,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var barcodeOutput: UILabel!
     
     // Barcode Output Log
-    @IBOutlet var barcodeLogOutput: [UILabel]!
+   
     
 
     // Package Output Log
-    @IBOutlet weak var packageLogOutput: UILabel!
+    
     
     // Letter-Mail Output Log
-    @IBOutlet weak var letterMailLogOutput: UILabel!
     
     // initialize barcode input
     var barcode : String = ""
@@ -149,12 +148,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             for i in barcodeArr{
                 if(i != nil){
-                    for j in self.barcodeLogOutput{
-                        let tempBarcode = i.barcode
+                    //for j in self.barcodeLogOutput{
+                let tempBarcode = i.barcode
                         let tempStatus = i.status
-                        print("\(tempBarcode)  \(tempStatus) ")
-                        j.text = tempBarcode + " " + tempStatus
-                    }
+                print("\(tempBarcode)  \(tempStatus) ")
+                        //j.text = tempBarcode + " " + tempStatus
+                   // }
                 }
                 else{
                     print("Error: \(String(describing: error?.localizedDescription))")
@@ -206,6 +205,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
     }*/
     
+    
+    @IBAction func packageLog(_ sender: UIButton) {
+        appSyncClient?.fetch(query: GetAllPackagesQuery(count:100))  { (result, error) in
+                if error != nil {
+                    print("Error......")
+                    print(error?.localizedDescription ?? "")
+                    return
+                }
+            
+            result?.data?.getAllPackages.packages.forEach {print(($0.barcode) + " " + ($0.time ?? "0"))}
+            
+        }
+    }
     /*
     // Grabs all packages from db
     @IBAction func packageLog(_ sender: UIButton) {

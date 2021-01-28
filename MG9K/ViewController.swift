@@ -12,7 +12,7 @@ import AWSAuthCore
 import AWSMobileClient
 import AWSAppSync
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate{
     
     // MARK: Properties
     
@@ -33,7 +33,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var barcodeOutput: UILabel!
     
     // Barcode Output Log
-   
+    @IBOutlet weak var barcodeOutputLog: UILabel!
+    
     
 
     // Package Output Log
@@ -86,7 +87,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print("Cognito Identity ID (authenticated): \(AWSMobileClient.default().identityId))")
                 
                 case.signedOut: // is Signed OUT
-                    print("Logged Out")
+                    //print("Logged Out")
                     DispatchQueue.main.async {
                        // self.signOutLocally()
                         self.showSignIn()
@@ -112,6 +113,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    /*
+    override var description: String{
+        description += "Barcode: \(bLog.barcode)\n"
+    }
+    */
 
 
     //MARK: Actions
@@ -143,9 +149,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print(error?.localizedDescription ?? "")
                     return
                 }
+            result?.data?.getAllBarcodes.barcodes.forEach{print (($0.barcode) + " " + ($0.value ?? "Not Delivered"))}
             
             result?.data?.getAllBarcodes.barcodes.forEach {barcodeArr.append(bLog(barcode: $0.barcode, status: $0.value ?? "Not Delivered"))
                 }
+        }
+            /*
+            let arr = barcodeArr[0].map { () -> bLog in
+                return String(bLog)
+            }.joined()
+        }*/
+        
+            /*
             for i in barcodeArr{
                 if(i != nil){
                     //for j in self.barcodeLogOutput{
@@ -159,7 +174,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print("Error: \(String(describing: error?.localizedDescription))")
                 }
             }
-            }
+            }*/
+    
     }
 
     

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i6E-2Y-D4K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i6E-2Y-D4K">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,41 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f2-Tg-kTM">
-                                <rect key="frame" x="351" y="145" width="63" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Barcode">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="menu" size="14"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMu-Bw-XhD">
-                                <rect key="frame" x="85" y="85" width="265" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Mail Gobbler 9000">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.3199990573669993" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="24" name="Futura-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="TxX-y9-7dE">
-                                <rect key="frame" x="10" y="98" width="67" height="64"/>
+                                <rect key="frame" x="0.0" y="88" width="67" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8JU-fa-ts9">
-                                <rect key="frame" x="351" y="93" width="54" height="39"/>
+                                <rect key="frame" x="340" y="88" width="54" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle"/>
@@ -64,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKy-SZ-aVJ">
-                                <rect key="frame" x="151" y="297" width="107" height="102"/>
+                                <rect key="frame" x="148" y="171" width="118.5" height="358"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="300"/>
                                 <state key="normal">
@@ -80,6 +51,35 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMu-Bw-XhD">
+                                <rect key="frame" x="77" y="88" width="265" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Mail Gobbler 9000">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.3199990573669993" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="24" name="Futura-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f2-Tg-kTM">
+                                <rect key="frame" x="336" y="125" width="63" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Barcode">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -175,9 +175,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9m-21-Lz0">
-                                <rect key="frame" x="34" y="104" width="108" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9m-21-Lz0">
+                                <rect key="frame" x="20" y="88" width="74" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="3F6-6u-tij"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Logs">
                                         <attributes>
@@ -188,10 +190,34 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tjU-dd-C8d">
-                                <rect key="frame" x="34" y="486" width="139" height="95"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9q0-Zd-H76">
+                                <rect key="frame" x="34" y="377" width="136" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.16254068190000001" green="0.66994438560000003" blue="0.81656816710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Barcode Log">
+                                            <attributes>
+                                                <color key="NSColor" red="0.9724657747605735" green="1" blue="0.94906755109871654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" metaFont="system" size="15"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="L4q-01-btH" kind="popoverPresentation" popoverAnchorView="9q0-Zd-H76" id="6K5-mP-yrn">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tjU-dd-C8d">
+                                <rect key="frame" x="212" y="377" width="139" height="79"/>
+                                <color key="backgroundColor" red="0.16254068190000001" green="0.66994438560000003" blue="0.81656816710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="UZb-Ia-JDU"/>
+                                    <constraint firstAttribute="width" constant="139" id="iCJ-Ja-za8"/>
+                                </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Package Log">
@@ -208,51 +234,16 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q2J-sb-JDa">
-                                <rect key="frame" x="254" y="322" width="128" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.16254068190000001" green="0.66994438560000003" blue="0.81656816710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Letter-Mail Log">
-                                            <attributes>
-                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="15" name="Futura-Medium"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <segue destination="KSd-Qn-Evk" kind="popoverPresentation" popoverAnchorView="q2J-sb-JDa" id="D90-fT-hhw">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m95-0Z-PPL">
-                                <rect key="frame" x="34" y="320" width="139" height="95"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.16254068190000001" green="0.66994438560000003" blue="0.81656816710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Package Log">
-                                            <attributes>
-                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="15" name="Futura-Medium"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <segue destination="L4q-01-btH" kind="popoverPresentation" popoverAnchorView="m95-0Z-PPL" id="lO5-ja-3dG">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ynV-62-xVZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="w9m-21-Lz0" firstAttribute="leading" secondItem="qPX-jH-lsT" secondAttribute="leadingMargin" id="IsS-tW-Bwb"/>
+                            <constraint firstItem="w9m-21-Lz0" firstAttribute="leading" secondItem="tjU-dd-C8d" secondAttribute="leading" constant="-192" id="Pni-xf-HzZ"/>
+                            <constraint firstItem="ynV-62-xVZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="w9m-21-Lz0" secondAttribute="trailing" symbolic="YES" id="Que-uW-xG3"/>
+                            <constraint firstItem="ynV-62-xVZ" firstAttribute="bottom" secondItem="tjU-dd-C8d" secondAttribute="bottom" constant="357" id="sVe-mu-tT8"/>
+                            <constraint firstItem="w9m-21-Lz0" firstAttribute="top" secondItem="ynV-62-xVZ" secondAttribute="top" id="zdl-f4-BTr"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Logs" image="pencil" catalog="system" id="MVt-5B-kpy"/>
                 </viewController>
@@ -268,9 +259,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAe-Vi-4k3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAe-Vi-4k3">
                                 <rect key="frame" x="20" y="88" width="207" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Dtz-Ey-ytf"/>
+                                    <constraint firstAttribute="width" constant="207" id="fXU-aN-acy"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Barcode Log">
                                         <attributes>
@@ -280,19 +274,43 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YX7-ZN-yq7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YX7-ZN-yq7">
                                 <rect key="frame" x="24" y="136" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="Gwl-He-yw3"/>
+                                    <constraint firstAttribute="height" constant="30" id="Xsi-Vz-WTK"/>
+                                </constraints>
                                 <state key="normal" title="Show"/>
                                 <connections>
                                     <action selector="showBarcodeLog:" destination="L4q-01-btH" eventType="touchUpInside" id="DpK-u1-l4B"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCr-oc-Ygq">
+                                <rect key="frame" x="20" y="280" width="374" height="355"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="40k-Ie-NyJ"/>
+                                    <constraint firstAttribute="height" constant="355" id="iHX-4U-rDe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iu9-fi-yXZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Iu9-fi-yXZ" firstAttribute="bottom" secondItem="sCr-oc-Ygq" secondAttribute="bottom" constant="173" id="EGG-lB-oZc"/>
+                            <constraint firstItem="YX7-ZN-yq7" firstAttribute="leading" secondItem="Iu9-fi-yXZ" secondAttribute="leading" constant="24" id="GKd-5M-aFP"/>
+                            <constraint firstItem="lAe-Vi-4k3" firstAttribute="top" secondItem="Iu9-fi-yXZ" secondAttribute="top" constant="88" id="HGR-5T-M2m"/>
+                            <constraint firstItem="YX7-ZN-yq7" firstAttribute="top" secondItem="lAe-Vi-4k3" secondAttribute="bottom" constant="1" id="f3x-Pk-54Y"/>
+                            <constraint firstItem="sCr-oc-Ygq" firstAttribute="leading" secondItem="lAe-Vi-4k3" secondAttribute="leading" id="hHT-co-rt2"/>
+                            <constraint firstItem="sCr-oc-Ygq" firstAttribute="leading" secondItem="HIu-eH-r9E" secondAttribute="leadingMargin" id="qNk-i6-dti"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DxK-e0-9SC"/>
+                    <connections>
+                        <outlet property="barcodeOutputLog" destination="sCr-oc-Ygq" id="pjf-T9-ryF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1V-bu-4Ef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -303,12 +321,15 @@
             <objects>
                 <viewController id="KSd-Qn-Evk" customClass="ViewController" customModule="MG9K" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rHT-NL-Z0d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOS-gO-FOK">
-                                <rect key="frame" x="20" y="80" width="242" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOS-gO-FOK">
+                                <rect key="frame" x="20" y="124" width="242" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="iAi-Cr-u3Y"/>
+                                    <constraint firstAttribute="width" constant="242" id="us5-kJ-a49"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Letter-Mail Log">
                                         <attributes>
@@ -319,9 +340,12 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baW-9f-esi">
-                                <rect key="frame" x="24" y="149" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baW-9f-esi">
+                                <rect key="frame" x="24" y="193" width="38" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="WT6-7q-Vv6"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZUE-rD-ZdL"/>
+                                </constraints>
                                 <state key="normal" title="Show"/>
                                 <connections>
                                     <action selector="letterMailLog:" destination="KSd-Qn-Evk" eventType="touchUpInside" id="UXD-HA-pnZ"/>
@@ -330,6 +354,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bjz-il-xAw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="baW-9f-esi" firstAttribute="top" secondItem="kOS-gO-FOK" secondAttribute="bottom" constant="22" id="DZF-BA-4cn"/>
+                            <constraint firstItem="baW-9f-esi" firstAttribute="leading" secondItem="bjz-il-xAw" secondAttribute="leading" constant="24" id="sFw-tL-kbc"/>
+                            <constraint firstItem="kOS-gO-FOK" firstAttribute="leading" secondItem="rHT-NL-Z0d" secondAttribute="leadingMargin" id="tPS-Vy-X33"/>
+                            <constraint firstItem="kOS-gO-FOK" firstAttribute="top" secondItem="bjz-il-xAw" secondAttribute="top" constant="80" id="u3Q-HT-Ncm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4O-be-NGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -344,9 +374,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZV-hS-gia">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZV-hS-gia">
                                 <rect key="frame" x="20" y="105" width="209" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="ThH-tl-cbH"/>
+                                    <constraint firstAttribute="height" constant="47" id="YQy-re-T4j"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Package Log">
                                         <attributes>
@@ -357,9 +390,12 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixc-1w-0Le">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixc-1w-0Le">
                                 <rect key="frame" x="24" y="183" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gZK-hL-PwG"/>
+                                    <constraint firstAttribute="width" constant="38" id="taB-Dk-O9L"/>
+                                </constraints>
                                 <state key="normal" title="Show"/>
                                 <connections>
                                     <action selector="packageLog:" destination="KQ7-ZP-6a8" eventType="touchUpInside" id="MfJ-2F-gUp"/>
@@ -368,6 +404,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9us-1b-1ID"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gZV-hS-gia" firstAttribute="leading" secondItem="cZV-o0-at2" secondAttribute="leadingMargin" id="11C-5s-0jH"/>
+                            <constraint firstItem="Ixc-1w-0Le" firstAttribute="top" secondItem="gZV-hS-gia" secondAttribute="bottom" constant="31" id="7uq-0z-4ze"/>
+                            <constraint firstItem="Ixc-1w-0Le" firstAttribute="leading" secondItem="9us-1b-1ID" secondAttribute="leading" constant="24" id="HeV-SQ-RDQ"/>
+                            <constraint firstItem="gZV-hS-gia" firstAttribute="top" secondItem="9us-1b-1ID" secondAttribute="top" constant="105" id="qlj-Yd-6RK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Eqa-WN-jcp"/>
                 </viewController>

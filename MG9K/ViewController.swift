@@ -33,8 +33,12 @@ class ViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var barcodeOutput: UILabel!
     
     // Barcode Output Log
+    @IBOutlet weak var barcodeName: UILabel!
     @IBOutlet weak var barcodeOutputLog: UILabel!
     
+    // Package Output Log
+    @IBOutlet weak var packageName: UILabel!
+    @IBOutlet weak var packageOutputLog: UILabel!
     
 
     // Package Output Log
@@ -49,8 +53,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
     
         // AWS Cognito
-        initializeAWSMobileClient()
-        showSignIn()
+       // initializeAWSMobileClient()
+       // showSignIn()
         
         //Reference AppSync client from App Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -153,6 +157,18 @@ class ViewController: UIViewController, UITextFieldDelegate{
             
             result?.data?.getAllBarcodes.barcodes.forEach {barcodeArr.append(bLog(barcode: $0.barcode, status: $0.value ?? "Not Delivered"))
                 }
+            print(barcodeArr)
+            
+            var idArray = [String]()
+            for bcodes in barcodeArr {
+                idArray.append(bcodes.barcode)
+            }
+            print(idArray)
+            let values = idArray.joined(separator: " ")
+            self.barcodeOutputLog.text = values
+            self.barcodeName.text = "Barcodes"
+            //let idArray = barcodeArr.map({ (barcode)})
+            
         }
             /*
             let arr = barcodeArr[0].map { () -> bLog in
@@ -223,6 +239,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
     
     @IBAction func packageLog(_ sender: UIButton) {
+        var packageArr = [pLog]()
         appSyncClient?.fetch(query: GetAllPackagesQuery(count:100))  { (result, error) in
                 if error != nil {
                     print("Error......")
@@ -231,6 +248,20 @@ class ViewController: UIViewController, UITextFieldDelegate{
                 }
             
             result?.data?.getAllPackages.packages.forEach {print(($0.barcode) + " " + ($0.time ?? "0"))}
+            
+            result?.data?.getAllPackages.packages.forEach {packageArr.append(pLog(barcode: $0.barcode, time: $0.time ?? "0"))
+                }
+            
+            print(packageArr)
+            
+            var idArray = [String]()
+            for packages in packageArr {
+                idArray.append(packages.barcode!)
+            }
+            print(idArray)
+            let values = idArray.joined(separator: " ")
+            self.packageOutputLog.text = values
+            self.packageName.text = "Packages"
             
         }
     }

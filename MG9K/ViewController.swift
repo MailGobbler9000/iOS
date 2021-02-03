@@ -53,8 +53,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
     
         // AWS Cognito
-       // initializeAWSMobileClient()
-       // showSignIn()
+        initializeAWSMobileClient()
+        showSignIn()
         
         //Reference AppSync client from App Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -162,11 +162,15 @@ class ViewController: UIViewController, UITextFieldDelegate{
             var idArray = [String]()
             for bcodes in barcodeArr {
                 idArray.append(bcodes.barcode)
+                idArray.append(bcodes.status)
             }
             print(idArray)
-            let values = idArray.joined(separator: " ")
+            let values = idArray.joined(separator: " \n")
             self.barcodeOutputLog.text = values
             self.barcodeName.text = "Barcodes"
+            
+            self.barcodeOutputLog.lineBreakMode = .byCharWrapping
+            self.barcodeOutputLog.numberOfLines = 0
             //let idArray = barcodeArr.map({ (barcode)})
             
         }
@@ -257,11 +261,15 @@ class ViewController: UIViewController, UITextFieldDelegate{
             var idArray = [String]()
             for packages in packageArr {
                 idArray.append(packages.barcode!)
+                idArray.append(packages.time!)
             }
             print(idArray)
-            let values = idArray.joined(separator: " ")
+            let values = idArray.joined(separator: " \n")
             self.packageOutputLog.text = values
             self.packageName.text = "Packages"
+            
+            self.packageOutputLog.lineBreakMode = .byCharWrapping
+            self.packageOutputLog.numberOfLines = 0
             
         }
     }

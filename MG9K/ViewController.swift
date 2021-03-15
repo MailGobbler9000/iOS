@@ -59,6 +59,13 @@ class ViewController: UIViewController, UITextFieldDelegate{
         //Reference AppSync client from App Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appSyncClient = appDelegate.appSyncClient
+        
+        do {
+            try self.appSyncClient?.clearCaches()
+        } catch  {
+            print(error)
+        }
+        
     }
     
     // AWS Sign in 
@@ -88,7 +95,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
                 switch(userState){
                 case.signedIn: // is Signed IN
                     print("Logged In")
-                    print("Cognito Identity ID (authenticated): \(AWSMobileClient.default().identityId))")
+                    print("Cognito Identity ID (authenticated): \(AWSMobileClient.default().identityId ?? "0"))")
                 
                 case.signedOut: // is Signed OUT
                     //print("Logged Out")
@@ -132,7 +139,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         barcodeOutput.text = "Last Inputted Barcode: \(barcode)"
         print(barcode)
         
-        appSyncClient?.perform(mutation: AddBarcodeMutation(barcode: "\(barcode)" ,value: "Not Delivered")) { (result, error) in
+        appSyncClient?.perform(mutation: AddBarcodeMutation(barcode: "\(barcode)" ,value: "Not Delivered"), resultHandler:  { (result, error) in
             if let error = error as? AWSAppSyncClientError {
                 print("Error occurred: \(error.localizedDescription )")
             }
@@ -140,12 +147,18 @@ class ViewController: UIViewController, UITextFieldDelegate{
                 print("Error saving the item on server: \(resultError)")
                 return
             }
-        }
+        })
     }
     
     
     @IBAction func showBarcodeLog(_ sender: UIButton) {
         var barcodeArr = [bLog]()
+        
+        do {
+            try self.appSyncClient?.clearCaches()
+        } catch  {
+            print(error)
+        }
         
         appSyncClient?.fetch(query: GetAllBarcodesQuery(count:1000000000))  { (result, error) in
                 if error != nil {
@@ -244,6 +257,13 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func packageLog(_ sender: UIButton) {
         var packageArr = [pLog]()
+        
+        do{
+            try self.appSyncClient?.clearCaches()
+        } catch  {
+            print(error)
+        }
+    
         appSyncClient?.fetch(query: GetAllPackagesQuery(count:100))  { (result, error) in
                 if error != nil {
                     print("Error......")
@@ -311,6 +331,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
             result?.data?.getAllLogs.logs.forEach {print(($0.id) + " " + ($0.time ?? "0")) }
             }
     }
+ 
   
     
     
@@ -343,7 +364,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     }*/
     
 }
-    
+
 
 
 
